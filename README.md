@@ -1,6 +1,6 @@
 # Useful Skills
 
-Claude Code Agent Skills 集合，包含实用的自动化工作流。
+通用 Agent Skills 集合，包含实用的自动化工作流。
 
 ## 📋 Skills 列表
 
@@ -19,32 +19,39 @@ Claude Code Agent Skills 集合，包含实用的自动化工作流。
 
 ---
 
+### spec-driven-development
+仿 Kiro 的规范驱动开发流程，按需求、设计、任务、执行分阶段推进功能开发。
+
+**使用场景：**
+- 新功能开发前先生成规格文档
+- 需要需求追踪、设计评审、任务拆解后再编码
+- 需要保护生产代码，避免未确认规格时直接实现
+
+**触发示例：**
+- "新功能 用户登录支持短信验证码"
+- "开发功能 支付中心增加分期还款入口"
+- "Start Feature add invoice export"
+
+---
+
 ## 🚀 安装方法
 
-### 方法 1：通过 Claude Code Plugin 安装
-
-```bash
-/plugin add im-naaran/usefull-skills
-```
-
-### 方法 2：通过 npx 安装
+推荐使用 `npx skills` 安装：
 
 ```bash
 npx skills add im-naaran/usefull-skills
 ```
 
-### 方法 3：手动安装
+### 手动安装
 
-**作为个人 Skills：**
+如果需要手动安装，可以将需要的 skill 目录复制到你的 Agent skills 目录中：
+
 ```bash
-cp -r code-review ~/.cursor/skills/
+cp -r code-review <your-skills-dir>/
+cp -r spec-driven-development <your-skills-dir>/
 ```
 
-**作为项目 Skills：**
-```bash
-mkdir -p .cursor/skills
-cp -r code-review .cursor/skills/
-```
+`<your-skills-dir>` 取决于你使用的 Agent 或运行环境。
 
 ---
 
@@ -52,3 +59,5 @@ cp -r code-review .cursor/skills/
 
 - **v1.0.0** (2026-02-04) - 初始版本
   - 新增 code-review skill
+- **v1.1.0** (2026-06-08) - 新增规范驱动开发流程
+  - 新增 spec-driven-development skill
